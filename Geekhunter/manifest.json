@@ -1,0 +1,21 @@
+{
+    "manifest_version": 3,
+    "name": "Geekhunter Extension",
+    "description": "This extension is for Geekhunter purpose",
+    "version": "1.0",
+    "host_permissions": [
+      "http://*/*",
+      "https://*/*"
+    ],
+    "content_scripts": [
+      {
+        "js": ["scripts/Vincere.js"],
+        "matches": [
+          "*://geekhunter.vincere.io/candidateDashboard.do?tabId=1&id=*"
+        ]
+      }
+    ],
+    "content_security_policy": {
+      "extension_pages": "default-src 'self'; connect-src https://* data: blob: filesystem:;"
+    }
+  }
